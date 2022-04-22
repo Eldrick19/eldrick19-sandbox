@@ -11,7 +11,3 @@ steps:
     attributes:
       label: Title
       placeholder: POC Kick-Off Call...
-  - type: input
-    attributes:
-      label: Attendees
-      placeholder: @octocat, @mona, customer1, customer2...
