@@ -2,16 +2,16 @@ trigger: meeting_notes
 title: Meeting Notes
 description: Spawn up a template for notes. Great for multitasking SEs!
 surfaces:
-- issue
+  - issue
 steps:
-- type: form
-  style: modal
-  body:
-  - type: input
-    attributes:
-      label: Title
-      placeholder: POC Kick-Off Call...
-  - type: input
-    attributes:
-      label: Attendees
-      placeholder: @octocat, @mona, customer1, customer2...
+  - type: form
+    style: modal
+    body:
+      - type: input
+        attributes:
+          label: Title
+          placeholder: POC Kick-Off Call...
+      - type: input
+        attributes:
+          label: Attendees
+          placeholder: @octocat, @mona, customer1, customer2...
