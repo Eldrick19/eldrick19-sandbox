@@ -37,11 +37,8 @@ steps:
 
 - type: fill
   template: |
-    Thank you for creating a slash command! See
-    Here is the data you provided: {{data}}
-    And here is some information about the command: {{command}}
 
-    ### [_Customer_] - {{ data.Title }}
+    ### {{ data.Title }}
     **Date:** {{ data.Date }}
 
     **Attendees:** {{ data.Attendees }}
@@ -52,5 +49,5 @@ steps:
 
     **Next Steps:**
     
-    {{ command.user.login }}
+    @{{ command.user.login }}
     {{ data.NextSteps }}
