@@ -10,11 +10,15 @@ steps:
   - type: input
     attributes:
       label: Title
-      placeholder: POC Kick-Off Call...
+      #placeholder: POC Kick-Off Call...
   - type: input
     attributes:
       label: Attendees
-      placeholder: "@octocat, @mona, customer1, customer2..."
+      #placeholder: "@octocat, @mona, customer1, customer2..."
+  - type: input
+    attributes:
+      label: Date
+      format: date
   - type: textarea
     attributes:
       label: Notes
@@ -22,27 +26,15 @@ steps:
       value: "-"
   - type: textarea
     attributes:
-      label: NextSteps
+      label: Next Steps
+      description: Enter next your action items first, and jot down those for a teammate as well.
       placeholder: Organize this how you want
       value: |
-        @{{ command.user.login }}
+        - [ ] 
+        
+        @teammate
         - [ ]
-        
-        @Rep
-        - [ ]
-  - type: textarea
-    attributes:
-      label: See available commands
-      value: |
-        {{ data }}
-        
-        -- Break --
-        
-        {{ command }}
-  - type: markdown
-    attributes:
-      text: "- [ ] TEST"
-      value: TEST
+
 - type: fill
   template: |
     Thank you for creating a slash command! See
@@ -50,7 +42,7 @@ steps:
     And here is some information about the command: {{command}}
 
     ### [_Customer_] - {{ data.Title }}
-    **Date:** [_Date_]
+    **Date:** {{ data.Date }}
 
     **Attendees:** {{ data.Attendees }}
 
@@ -59,5 +51,5 @@ steps:
     {{ data.Notes }}
 
     **Next Steps**
-
-    {{ data.NextSteps }}
+    @{{ command.user.login }}
+    {{ data."Next Steps" }}
