@@ -19,7 +19,6 @@ steps:
     attributes:
       label: Notes
       placeholder: Organize this how you want
-      value: - 
   - type: markdown
     attributes:
       text: - [ ] TEST
