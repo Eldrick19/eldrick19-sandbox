@@ -29,15 +29,6 @@ steps:
       - [ ]
       @Rep
       - [ ]
-  - type: textarea
-    attributes:
-      label: See available commands
-      value: |
-      {{ data }}
-      
-      -- Break --
-      
-      {{ command }}
   - type: markdown
     attributes:
       text: - [ ] TEST
