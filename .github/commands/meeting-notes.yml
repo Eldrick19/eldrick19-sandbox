@@ -20,15 +20,6 @@ steps:
       label: Notes
       placeholder: Organize this how you want
       value: - 
-  - type: textarea
-    attributes:
-      label: NextSteps
-      placeholder: Organize this how you want
-      value: |
-        @{{ command.user.login }}
-        - [ ]
-        @Rep
-        - [ ]
   - type: markdown
     attributes:
       text: - [ ] TEST
