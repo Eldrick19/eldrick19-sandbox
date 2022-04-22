@@ -26,7 +26,7 @@ steps:
       value: "-"
   - type: textarea
     attributes:
-      label: Next Steps
+      label: Next%20Steps
       description: Enter your action items first, and jot down those for a teammate as well.
       placeholder: Organize this how you want
       value: |
