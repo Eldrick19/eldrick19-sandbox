@@ -25,10 +25,10 @@ steps:
       label: NextSteps
       placeholder: Organize this how you want
       value: |
-      @{{ command.user.login }}
-      - [ ]
-      @Rep
-      - [ ]
+        @{{ command.user.login }}
+        - [ ]
+        @Rep
+        - [ ]
   - type: markdown
     attributes:
       text: - [ ] TEST
