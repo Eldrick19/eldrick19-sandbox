@@ -15,10 +15,6 @@ steps:
     attributes:
       label: Attendees
       placeholder: @octocat, @mona, customer1, customer2...
-  - type: textarea
-    attributes:
-      label: Notes
-      placeholder: Organize this how you want
   - type: markdown
     attributes:
       text: - [ ] TEST
