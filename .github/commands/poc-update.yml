@@ -1,0 +1,50 @@
+trigger: poc_update
+title: GHAS PoC Update
+description: An update to a GitHub Advanced Security (GHAS) Proof of Concept (PoC)
+surfaces:
+  - issue
+steps:
+  - type: form
+    style: embedded
+    actions:
+      submit: Submit your updates!
+      cancel: Cancel your updates
+    body:
+      - type: dropdown
+        attributes:
+          label: Color
+          description: What is the general status of the proof of cocept (poc)?
+          options:
+            - label: 🟢 Green
+              value: 🟢
+            - label: 🟡 Yellow
+              value: 🟡
+            - label: 🔴 Red
+              value: 🔴
+      - type: textarea
+        attributes:
+          label: Good
+          description: What are the positives coming out of the proof of concept so far for the customer?
+          placeholder: developer first, ease of use, quick set up, etc
+      - type: textarea
+        attributes:
+          label: Bad
+          description: What are the blockers? What is the customer struggling with? What are the key problems?
+          placeholder: Language problems, Framework support, code scanning problems, etc
+  - type: fill
+    template: |
+      ## GHAS POC Update :star_struck:
+      
+      ### Who is providing the update?
+      This update is coming as courtesy of: {{ command.user.login }} :wave:
+      
+      ### Firstly, what is your general feel for how the PoC is going? 
+      {{ command.user.login }} feels like the POC is: {{ data.Color }}. 
+      
+      ### Secondly, what are the pros so far? What is going well?
+      {{ data.Good }} 
+      
+      ### Lastly, what isn't going so well? What is being your biggest blockers? 
+      {{ data.Bad }} 
+      
+      Thanks for providing your update!
