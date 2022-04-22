@@ -52,5 +52,5 @@ steps:
 
     **Next Steps:**
     
-    @{{ command.user.login }}
-    {{ data.Next Steps }}
+    {{ command.user.login }}
+    {{ data.Next%20Steps }}
