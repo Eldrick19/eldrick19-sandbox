@@ -11,3 +11,51 @@ steps:
     attributes:
       label: Title
       placeholder: POC Kick-Off Call...
+  - type: input
+    attributes:
+      label: Attendees
+      placeholder: "@octocat, @mona, customer1, customer2..."
+  - type: textarea
+    attributes:
+      label: Notes
+      placeholder: Organize this how you want
+      value: - 
+  - type: textarea
+    attributes:
+      label: NextSteps
+      placeholder: Organize this how you want
+      value: |
+        @{{ command.user.login }}
+        - [ ]
+        @Rep
+        - [ ]
+  - type: textarea
+    attributes:
+      label: See available commands
+      value: |
+        {{ data }}
+        
+        -- Break --
+        
+        {{ command }}
+  - type: markdown
+    attributes:
+      text: - [ ] TEST
+- type: fill
+  template: |-
+    Thank you for creating a slash command! See
+    Here is the data you provided: {{data}}
+    And here is some information about the command: {{command}}
+
+    ### [_Customer_] - {{ data.Title }}
+    **Date:** [_Date_]
+
+    **Attendees:** {{ data.Attendees }}
+
+    **Notes:**
+
+    {{ data.Notes }}
+
+    **Next Steps**
+
+    {{ data.NextSteps }}
