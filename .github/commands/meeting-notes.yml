@@ -19,4 +19,4 @@ steps:
     attributes:
       label: Notes
       placeholder: Organize this how you want
-      value: -
+      value: "-"
