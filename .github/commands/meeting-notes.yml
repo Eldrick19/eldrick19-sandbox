@@ -5,7 +5,7 @@ surfaces:
 - issue
 steps:
 - type: form
-  style: modal
+  style: embedded
   body:
   - type: input
     attributes:
@@ -27,6 +27,7 @@ steps:
       value: |
         @{{ command.user.login }}
         - [ ]
+        
         @Rep
         - [ ]
   - type: textarea
