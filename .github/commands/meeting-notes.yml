@@ -40,4 +40,4 @@ steps:
         {{ command }}
   - type: markdown
     attributes:
-      text: - [ ] TEST
+      text: "- [ ] TEST"
