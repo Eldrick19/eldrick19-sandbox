@@ -41,3 +41,4 @@ steps:
   - type: markdown
     attributes:
       text: "- [ ] TEST"
+      value: TEST
