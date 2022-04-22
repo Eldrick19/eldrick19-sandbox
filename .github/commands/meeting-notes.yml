@@ -15,6 +15,3 @@ steps:
     attributes:
       label: Attendees
       placeholder: @octocat, @mona, customer1, customer2...
-  - type: markdown
-    attributes:
-      text: - [ ] TEST
