@@ -1,4 +1,7 @@
 # Creates a template for note-taking. Call in an issue by typing "/meeting_notes" or "/notes"
+# To save this command and use it across an repo on your GitHub profile go through the following steps:
+# 1) Create a repo <USERNAME>/.github-private
+# 2) Save this file under .github/commands/meeting-notes.yml
 
 trigger: meeting_notes
 title: Meeting Notes
