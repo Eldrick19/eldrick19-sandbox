@@ -1,3 +1,5 @@
+# Creates a template for note-taking. Call in an issue by typing "/meeting_notes" or "/notes"
+
 trigger: meeting_notes
 title: Meeting Notes
 description: Spawn a template for notes. Great for multitasking SEs!
@@ -7,23 +9,28 @@ steps:
 - type: form
   style: embedded
   body:
+  # Meeting Title Section
   - type: input
     attributes:
       label: Title
-      #placeholder: POC Kick-Off Call...
+      placeholder: POC Kick-Off Call...
+  # Attendees Section
   - type: input
     attributes:
       label: Attendees
       placeholder: "@octocat, @mona, customer1, customer2..."
+  # Date Section
   - type: input
     attributes:
       label: Date
       format: date
+  # Notes Section
   - type: textarea
     attributes:
       label: Notes
       placeholder: Organize this how you want
       value: "- "
+  # Next Steps Section
   - type: textarea
     attributes:
       label: NextSteps
@@ -34,7 +41,7 @@ steps:
         
         @teammate
         - [ ] 
-
+# Output notes from entered values
 - type: fill
   template: |
 
