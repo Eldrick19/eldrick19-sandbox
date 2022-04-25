@@ -23,7 +23,7 @@ steps:
     attributes:
       label: Notes
       placeholder: Organize this how you want
-      value: "-"
+      value: "- "
   - type: textarea
     attributes:
       label: NextSteps
@@ -33,21 +33,21 @@ steps:
         - [ ] 
         
         @teammate
-        - [ ]
+        - [ ] 
 
 - type: fill
   template: |
 
-    ### {{ data.Title }}
+    ## {{ data.Title }}
     **Date:** {{ data.Date }}
 
     **Attendees:** {{ data.Attendees }}
 
-    **Notes:**
+    ### Notes
 
     {{ data.Notes }}
 
-    **Next Steps:**
+    ### Next Steps
     
     @{{ command.user.login }}
     {{ data.NextSteps }}
