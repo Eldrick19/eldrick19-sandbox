@@ -1,6 +1,6 @@
 trigger: meeting_notes
 title: Meeting Notes
-description: Spawn up a template for notes. Great for multitasking SEs!
+description: Spawn a template for notes. Great for multitasking SEs!
 surfaces:
 - issue
 steps:
