@@ -5,7 +5,10 @@ title: Meeting Notes
 description: Spawn a template for notes. Great for multitasking SEs!
 surfaces:
 - issue
+
 steps:
+
+# Create form for note-taking
 - type: form
   style: embedded
   body:
@@ -41,6 +44,7 @@ steps:
         
         @teammate
         - [ ] 
+
 # Output notes from entered values
 - type: fill
   template: |
