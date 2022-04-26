@@ -4,7 +4,7 @@ name: Push Issue to Project
 
 on:
   issues:
-    types: [ assigned ]
+    types: [ assigned, labeled ]
 
   # workflow_dispatch:
 
