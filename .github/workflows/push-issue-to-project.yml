@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: Eldrick19/add-to-project@main
+      - uses: Eldrick19/add-to-project@assignee-as-trigger
         with:
           project-url: https://github.com/users/Eldrick19/projects/1
           github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
