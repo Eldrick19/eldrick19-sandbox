@@ -18,4 +18,4 @@ jobs:
           project-url: https://github.com/users/Eldrick19/projects/1
           github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
           assignee: Eldrick19, rickalt19
-          assignee-operator: OR
+          assignee-operator: AND
