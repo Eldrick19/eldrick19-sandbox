@@ -30,7 +30,7 @@ jobs:
     permissions:
       issues: write
     if: |
-      contains(github.event.labels.*.name, 'Prospect') && 
+      contains(github.event.issue.labels.*.name, 'Prospect') && 
       github.event.action == 'labeled'
     steps:
       - name: View the github context
