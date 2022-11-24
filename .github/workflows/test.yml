@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       issues: write
-    if: (contains(github.event.labels.*.name, 'Prospect') && github.event.action == 'opened') || (github.event.label.name == 'Prospect' && github.event.action == 'assigned')
+#     if: (contains(github.event.labels.*.name, 'Prospect') && github.event.action == 'opened') || (github.event.label.name == 'Prospect' && github.event.action == 'assigned')
     steps:
       - name: View the github context
         run: echo "$GITHUB_CONTEXT"
