@@ -1,45 +1,17 @@
-name: Assign to Project
+# Used to auto-assign an issue creator
+# A lot of integrations are depndent on issue assignmnets, want to make sure we're on top of it!
 
+name: Auto Assign
 on:
   issues:
-    types: [ assigned, labeled ]
+    types: [ opened ]
 
 jobs:
-  add-to-eldrick-board:
-    name: Adding Issue to Eldrick`s board
+  run:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
-    if: |
-      github.event.issue.assignee.login == 'eldrick19' && 
-      github.event.action == 'assigned'
     steps:
-      - name: View the github context
-        run: echo "$GITHUB_CONTEXT"
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-      - uses: actions/add-to-project@v0.4.0
+      - uses: wow-actions/auto-assign@v2
         with:
-          # You can target a repository in a different organization
-          # to the issue
-          project-url: https://github.com/users/Eldrick19/projects/1
-          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
-  add-to-account-board:
-    name: Add Issue to Account Board
-    runs-on: ubuntu-latest
-    permissions:
-      issues: write
-    if: |
-      contains(github.event.issue.labels.*.name, 'Prospect') && 
-      github.event.action == 'labeled'
-    steps:
-      - name: View the github context
-        run: echo "$GITHUB_CONTEXT"
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-      - uses: actions/add-to-project@v0.4.0
-        with:
-          # You can target a repository in a different organization
-          # to the issue
-          project-url: https://github.com/users/Eldrick19/projects/1
-          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # using the `org/team_slug` or `/team_slug` syntax to add git team as reviewers
+          addAssignees: 'author'
