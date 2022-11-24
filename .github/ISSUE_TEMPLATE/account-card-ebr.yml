@@ -1,0 +1,43 @@
+name: 'EBR - Account Strategy Card'
+description: Strategy Card - From EBR
+title: "AccountName"
+labels: "Prospect"
+assignees: "carleebee"
+
+body:
+  - type: textarea
+    id: tldr
+    attributes:
+      label: "TL;DR:"
+      value: |
+       Brief Description:
+       - 
+       Pre-Call Summary:
+       - 
+  - type: textarea
+    id: links
+    attributes:
+      label: "Links:"
+      value: |
+       - [SFDC](URL)
+       - [LinkedIn](URL)
+       
+       GH Issues:
+       - 
+       News:
+       - 
+  - type: textarea
+    id: contacts
+    attributes:
+      label: "Contacts:"
+      value: |
+       - Name / Title / Topic / Outbound or Inbound?
+       
+  - type: checkboxes
+    id: details
+    attributes:
+      label: "Additional Details"
+      options:
+        - label: 🟩 MSFT Customer (VS Licences)
+        - label: 🏛️ Public Sector
+        - label: ⛽️ GHAS Opportunity
