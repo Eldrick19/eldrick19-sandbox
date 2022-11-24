@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       issues: write
-    if: github.event.issue.assignee.login == 'eldrick19' && (github.event.action == 'opened' || github.event.action == 'assigned') 
+    if: |
+      github.event.issue.assignee.login == 'eldrick19' && 
+      (github.event.action == 'opened' || github.event.action == 'assigned') 
     steps:
       - name: View the github context
         run: echo "$GITHUB_CONTEXT"
@@ -27,7 +29,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       issues: write
-    if: contains(github.event.labels.*.name, 'Prospect') && (github.event.action == 'opened' || github.event.action == 'labeled')
+    if: |
+      contains(github.event.labels.*.name, 'Prospect') && 
+      (github.event.action == 'opened' || github.event.action == 'labeled')
     steps:
       - name: View the github context
         run: echo "$GITHUB_CONTEXT"
