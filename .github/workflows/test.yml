@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       issues: write
-    if: github.event.issue.assignee.name == 'eldrick19'
+#     if: github.event.issue.assignee.name == 'eldrick19'
     steps:
       - name: View the github context
         run: echo "$GITHUB_CONTEXT"
