@@ -2,7 +2,7 @@ name: Assign to Project
 
 on:
   issues:
-    types: [ opened, assigned, labeled ]
+    types: [ assigned, labeled ]
 
 jobs:
   add-to-eldrick-board:
@@ -12,7 +12,7 @@ jobs:
       issues: write
     if: |
       github.event.issue.assignee.login == 'eldrick19' && 
-      (github.event.action == 'opened' || github.event.action == 'assigned') 
+      github.event.action == 'assigned'
     steps:
       - name: View the github context
         run: echo "$GITHUB_CONTEXT"
@@ -31,7 +31,7 @@ jobs:
       issues: write
     if: |
       contains(github.event.labels.*.name, 'Prospect') && 
-      (github.event.action == 'opened' || github.event.action == 'labeled')
+      github.event.action == 'labeled'
     steps:
       - name: View the github context
         run: echo "$GITHUB_CONTEXT"
