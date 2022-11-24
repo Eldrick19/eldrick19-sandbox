@@ -10,15 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       issues: write
-#     if: github.event.issue.assignee.name == 'eldrick19'
+    if: github.event.issue.assignee.login == 'eldrick19'
     steps:
       - name: View the github context
         run: echo "$GITHUB_CONTEXT"
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-#       - uses: actions/add-to-project@v0.4.0
-#         with:
-#           # You can target a repository in a different organization
-#           # to the issue
-#           project-url: https://github.com/orgs/Eldrick19/projects/1
-#           github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/add-to-project@v0.4.0
+        with:
+          # You can target a repository in a different organization
+          # to the issue
+          project-url: https://github.com/orgs/Eldrick19/projects/1
+          github-token: ${{ secrets.GITHUB_TOKEN }}
