@@ -2,7 +2,7 @@ name: Assign to Project
 
 on:
   issues:
-    types: [ opened, assigned ]
+    types: [ opened, assigned, labeled ]
 
 jobs:
   add-to-project:
