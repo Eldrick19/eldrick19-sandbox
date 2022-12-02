@@ -41,3 +41,12 @@ body:
         - label: 🟩 MSFT Customer (VS Licences)
         - label: 🏛️ Public Sector
         - label: ⛽️ GHAS Opportunity
+        
+  - type: markdown
+    id: details
+    attributes:
+      value: |
+        ```[tasklist]
+        ### Relevant Issues
+        
+        ```
