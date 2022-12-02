@@ -42,11 +42,12 @@ body:
         - label: 🏛️ Public Sector
         - label: ⛽️ GHAS Opportunity
         
-  - type: markdown
-    id: details
+  - type: textarea
+    id: linked_issues
     attributes:
+      label: Relevant Issues
       value: |
         ```[tasklist]
         ### Relevant Issues
-        
+        - [ ] 
         ```
