@@ -1,0 +1,24 @@
+# Uses the eldrick19/bulk-project-update action to update the project board
+
+name: Update Eldrick Project Board
+on:
+  # Runs on a schedule every Monday at 6:00 AM EST
+  schedule:
+    - cron: '0 11 * * 1'
+  workflow_dispatch:
+    
+jobs:
+  update-eldrick-project-board:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: eldrick19/bulk-project-update@main
+        with:
+          # The project board to update
+          token: ${{ secrets.PROJECT_MANAGEMENT_TOKEN }}
+          project-number: 5572
+          update-field: Due 🗓
+          update-value: ${{ steps.date.outputs.date }} # Today's date
+          filter-field: Due 🗓
+          condtional: <
+          filter-value: ${{ steps.date.outputs.date }} # Today's date
