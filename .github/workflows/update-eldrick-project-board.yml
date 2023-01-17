@@ -20,5 +20,5 @@ jobs:
           update-field: Due 🗓
           update-value: ${{ steps.date.outputs.date }} # Today's date
           filter-field: Due 🗓
-          condtional: <
+          conditional: <
           filter-value: ${{ steps.date.outputs.date }} # Today's date
