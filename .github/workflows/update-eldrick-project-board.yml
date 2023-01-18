@@ -2,23 +2,54 @@
 
 name: Update Eldrick Project Board
 on:
-  # Runs on a schedule every Monday at 6:00 AM EST
   schedule:
-    - cron: '0 11 * * 1'
+    # Every weekday at 8:00 AM EST
+    - cron: '0 13 * * 1-5'
   workflow_dispatch:
     
 jobs:
-  update-eldrick-project-board:
+  update-due-date:
+    # Only run on Mondays
+    if: ${{ github.event_name == 'schedule' && github.event.schedule == '0 13 * * 1' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      # Set the date to today's date
+      - name: Set date
+        id: date
+        run: |
+          echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
       - uses: eldrick19/bulk-project-update@bugfix-docker-run
         with:
-          # The project board to update
-          token: ${{ secrets.PROJECT_MANAGEMENT_TOKEN }}
+          token: ${{ secrets.MANAGE_PROJECTS_TOKEN }}
           project-number: 5572
           update-field: Due 🗓
-          update-value: ${{ steps.date.outputs.date }} # Today's date
+          update-value: ${{ steps.date.outputs.date }}
           filter-field: Due 🗓
-          conditional: <
-          filter-value: ${{ steps.date.outputs.date }} # Today's date
+          condtional: <
+          filter-value: ${{ steps.date.outputs.date }}
+
+  update-status:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # Sets the date to tomorrow's date
+      # Skip weekends
+      - name: Set date
+        id: date
+        run: |
+          if [[ $(date +'%u') -lt 6 ]]; then
+            echo "date=$(date -d '+1 day' +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+          else
+            echo "date=$(date -d 'next Monday' +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+          fi
+      - uses: eldrick19/bulk-project-update@bugfix-docker-run
+        with:
+          token: ${{ secrets.MANAGE_PROJECTS_TOKEN }}
+          project-number: 5572
+          update-field: Status
+          update-value: ❗️
+          filter-field: Due 🗓
+          condtional: =
+          # Tomorrow's date
+          filter-value: ${{ steps.date.outputs.date }}
